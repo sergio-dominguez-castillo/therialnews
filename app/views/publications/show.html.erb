@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @publication %>
 
 <div>
@@ -8,3 +6,14 @@
 
   <%= button_to "Destroy this publication", @publication, method: :delete %>
 </div>
+
+<h2>Comments</h2>
+<%= render 'comments/publication_comments' %>
+<div>
+  <%= button_to "Destroy this comment", @publication, method: :delete %>
+</div>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+

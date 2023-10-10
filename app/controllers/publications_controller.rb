@@ -8,9 +8,7 @@ class PublicationsController < ApplicationController
   before_action only: [:edit, :update, :destroy] do
     authorize_request(["admin"])
     end
-  before_action only: [:edit, :update, :destroy] do
-    authorize_request(["admin"])
-    end
+ 
   
   # GET /publications or /publications.json
   def index
@@ -19,6 +17,8 @@ class PublicationsController < ApplicationController
 
   # GET /publications/1 or /publications/1.json
   def show
+    @comment = Comment.new
+    @comments = @publication.comments
   end
 
   # GET /publications/new
